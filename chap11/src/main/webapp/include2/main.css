@@ -1,0 +1,47 @@
+* {
+	box-sizing: border-box;
+	border: solid 1px black;
+	
+}
+
+#main {
+	display:grid;
+	grid-template-rows:100px 100px 400px 100px;	
+	height: 700px;
+	width: 500px;
+}
+
+#header {
+	background-color:blue;
+	wihth: 100%;
+	
+	
+}
+
+#nav {
+	background-color:red;
+	width: 100%;
+	
+}
+
+#center {
+	display:grid;
+	grid-template-columns: 3fr 1fr;
+	
+}
+#center2 {
+	display:grid;
+	grid-template-rows: 1fr 1.5fr;
+}
+.section {
+	background-color:green;
+}
+
+.article {
+	background-color:yellow;
+}
+
+#aside {
+	width: 25%;
+	background-color: gray;
+}
