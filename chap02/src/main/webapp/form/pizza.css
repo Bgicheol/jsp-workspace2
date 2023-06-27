@@ -1,0 +1,68 @@
+#main {
+	box-sizing : border-box;
+	width: 800px;
+	height: 900px;
+}
+
+#main > *{	
+	display:grid;	
+}
+#main > div:first-child {
+	grid-template-columns: repeat(2, 1fr);
+	justify-items:left;
+	border: solid 1px black;
+	height: 200px;
+}
+
+#title {
+	display:grid;
+	grid-template-rows: repeat(2, 1fr);
+	
+}
+#main > div:first-child > div:last-child >div:first-child{
+	border: solid 1px black;
+	justify-items: right;
+}
+#main > div:first-child > div:last-child > div:last-child {
+	
+	justify-items: right;
+	border: solid 1px black;
+	
+}
+
+#pizza {
+	grid-template-columns: repeat(5, 1fr);
+	border: solid 1px black;
+	justify-items: center;
+	align-items: center;
+}
+
+#pizza > .button1 {
+	background-image: url('curst.png');
+	background-size:roud;
+	background-color: red;
+	height: 200px;
+	width: 200px;
+}
+#pizza > .button2 {
+	background-image: url();
+	
+	height: 200px;
+	width: 200px;
+}
+#pizza > .button3 {
+	background-image: url();
+	
+	height: 200px;
+	width: 200px;
+}
+
+#options {
+	height:300px;
+	border: solid 1px black;
+}
+#options > * {
+	border: solid 1px black;
+	grid-template-columns: repeat(5,1fr);
+	column-gap: 1px;
+}
