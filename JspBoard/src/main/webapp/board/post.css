@@ -1,0 +1,26 @@
+@charset "EUC-KR";
+
+#main {
+	box-sizing: border-box;
+	display:grid;
+	grid-template-columns: 50px 650px 200px;
+	width:700px;
+}
+
+#title {
+	grid-column: 1 / 2; 
+}
+#titleText {
+	grid-column: 2 / 4;
+}
+#post {
+	grid-column: 1 / 2;
+}
+
+#textarea {
+	grid-column: 2 / 4;
+}
+
+#btn {
+	grid-column: 3 / 4;
+}
