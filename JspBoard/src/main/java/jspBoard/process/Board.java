@@ -29,7 +29,7 @@ public class Board implements BusinessLogic {
 			writer_pw == null || writer_pw.trim().equals("") ||
 			post== null || post.trim().equals("") 			
 		) {
-			return "redirect:" + request.getContextPath() + "./post.jsp";
+			return "redirect:" + request.getContextPath() + "./post";
 		}
 		
 		System.out.println(title);
@@ -45,7 +45,8 @@ public class Board implements BusinessLogic {
 		write.setPost("post");
 
 		dao.newPost(write);
-		return "redirect:" + request.getContextPath() + "./main.jsp";
+		request.setAttribute("writer", dao.getModel());
+		return "redirect:" + request.getContextPath() + "./main";
 	}
 	
 }

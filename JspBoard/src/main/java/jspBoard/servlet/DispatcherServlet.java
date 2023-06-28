@@ -40,7 +40,8 @@ public class DispatcherServlet extends HttpServlet {
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		String contextPath = config.getServletContext().getContextPath();
-		processMapping.put(contextPath + "/board/main::POST", new Board());		
+		processMapping.put(contextPath + "/board/main::POST", new Board());	
+		System.out.println(contextPath);
 	}
 	
 	@Override
@@ -52,7 +53,7 @@ public class DispatcherServlet extends HttpServlet {
 			if (nextPage.startsWith("redirect:")) {
 				response.sendRedirect(nextPage.substring("redirect:".length()));
 			} else {
-				request.getRequestDispatcher(nextPage + ".jsp").forward(request, response);
+				request.getRequestDispatcher("./" + nextPage + ".jsp").forward(request, response);
 			}
 		} catch (NullPointerException e) {
 			request.getRequestDispatcher("/WEB-INF/error/unknown_uri.jsp").forward(request, response);

@@ -21,32 +21,33 @@
 
 
 
+#header {
+	grid-column:1 / 5;
+	width: 100%;
+	text-align: center;
+}
+#postNumber {
+	width: 10%;
+}
+#posttitle {
+	width: 70%;
+}
+#writer {
+	width: 10%;
+}
+#views {
+	width: 10%;
+}
 #page  {
 	grid-column: 2 / 4;
 	
-	 column:center;
-}
-#postNumber {
-	grid-column: 1 / 2;
-	
+	 
 }
 
-#posttitle {
+#footer {
 	grid-column: 2 / 3;
-	
 }
 
-#writer {
-	grid-column: 3 / 4;
-	
-}
-
-#views {
+#write {
 	grid-column: 4 / 5;
-	
-}
-
-
-	grid-column: 4 / 5;
-	
 }

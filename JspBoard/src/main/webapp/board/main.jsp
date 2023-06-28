@@ -1,5 +1,7 @@
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="EUC-KR"%>\
+<%@ page import="jspBoard.model.BoardModel" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,13 +12,32 @@
 <body>
  <div id="board">
 	<div id="title"><p>JSP 연습</p></div>	
-	
+<!-- 
 	<div id="postNumber">글 번호</div>
 	<div id="posttitle">제목</div>
 	<div id="writer">글쓴이</div>
 	<div id="views">조회수</div>		
 	
-	<div id="page">
+ -->
+	<div id="header">
+		<table id="header">
+			<tr>
+				<td id="postNumber">글 번호</td>
+				<td id="posttitle">제목</td>
+				<td id="writer">글쓴이</td>
+				<td id="views">조회수</td>
+			</tr>
+			<%for(BoardModel model: request.getAttribute("writer")){ %>
+				<tr>
+					<td><%=model.getPost_number()%></td>
+					<td><%=model.getTitle() %></td>
+					<td><%=model.getWriter() %></td>
+					<td><%=model.getViews() %></td>
+				</tr>
+			<%} %>
+		</table>
+	</div>
+	<div id="footer">
 		<table>
 			<tr>
 				<td>&lt; </td>
@@ -29,7 +50,8 @@
 			</tr>
 		</table>		
 	</div>
-	<button id="write" onclick="location.href='./post.jsp'">글쓰기</button>
+	
+	<button id="write" type="submit">글쓰기</button>
  </div>
 	
 </body>

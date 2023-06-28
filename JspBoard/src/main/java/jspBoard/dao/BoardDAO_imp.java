@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import jspBoard.model.BoardModel;
 
@@ -32,6 +34,32 @@ public class BoardDAO_imp implements BoardDAO{
 		}		
 		
 	}
+	
+	@Override
+	public List<BoardModel> getModel() {
+		List<BoardModel> list =new ArrayList<>();
+		String sql = "SELECT * FROM board";
+		try (
+			Connection conn = DBconnection.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);			
+			ResultSet rs = pstmt.executeQuery();
+		){
+			while(rs.next()) {
+				BoardModel dao = new BoardModel();
+				dao.setTitle(rs.getString("title"));
+				dao.setWriter(rs.getString("writer"));
+				dao.setWriter_qw(rs.getString("writer_pw"));
+				dao.setPost(rs.getString("post"));
+				list.add(dao);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
+		}			
+		return list;
+	}
+	
 	
 	@Override
 	public int delete(int post_number) {
