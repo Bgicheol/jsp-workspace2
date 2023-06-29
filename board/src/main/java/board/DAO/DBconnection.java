@@ -1,4 +1,4 @@
-package jspBoard.dao;
+package board.DAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
