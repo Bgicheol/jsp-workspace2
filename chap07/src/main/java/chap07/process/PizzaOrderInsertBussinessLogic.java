@@ -31,7 +31,7 @@ public class PizzaOrderInsertBussinessLogic implements BusinessLogic {
 			address == null || address.trim().equals("") ||
 			pizza_option == null || pizza_option.trim().equals("") 			
 		) {
-			return "redirect:" + request.getContextPath() + "/pizza/order";
+			return "redirect:" + request.getContextPath() + "/pizza/order";	
 		}
 		
 		System.out.println(pizza_id);

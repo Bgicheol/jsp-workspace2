@@ -1,0 +1,54 @@
+@charset "EUC-KR";
+* {
+	box-sizing: border-box;
+
+}
+#board {
+	
+	display:grid;
+	grid-template-columns:100px 700px 100px 100px;
+	grid-template-rows:1fr;
+	width:1000px;
+	place-items:center;
+}
+
+#title {
+	font-size: 50px;
+	grid-column: 1 / 5;
+	
+
+}
+
+
+
+#header {
+	grid-column:1 / 5;
+	width: 100%;
+	text-align: center;
+	
+}
+#postNumber {
+	width: 10%;
+}
+#posttitle {
+	width: 70%;
+}
+#writer {
+	width: 10%;
+}
+#views {
+	width: 10%;
+}
+#page  {
+	grid-column: 2 / 4;
+	
+	 
+}
+
+#footer {
+	grid-column: 2 / 3;
+}
+
+#write {
+	grid-column: 4 / 5;
+}
