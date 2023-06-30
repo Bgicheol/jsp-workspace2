@@ -1,13 +1,18 @@
 package board.common;
 
 public class Pagination {
+	private int boardCount;
 	private int page;
 	private int size;
 	
-	public Pagination(int page, int size) {
+	public Pagination(int page, int size, int boardCount) {
 		this.page = page;
 		this.size = size;
-		
+		this.boardCount = boardCount;
+	}
+	
+	public int getCurrPage() {
+		return page;
 	}
 	
 	public int getStart() {
@@ -16,5 +21,10 @@ public class Pagination {
 	
 	public int getEnd() {
 		return page * size;
+	}
+	
+	public int getLastPage() {
+		return boardCount % size == 0 ?
+				boardCount /size : boardCount / size + 1;
 	}
 }
